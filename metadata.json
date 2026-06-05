@@ -1,0 +1,6 @@
+{
+  "name": "Ábrelo cuando...",
+  "description": "Un rincón interactivo de cartas de amor para mi novia con lindos doodles de capibaras y sopa de letras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-cursive: "Indie Flower", cursive;
+}
+
+/* CUSTOM NOTEBOOK BACKGROUNDS */
+.notebook-bg {
+  background-color: #f7eed3; /* Warm wooden table / warm desktop shade */
+  background-image: 
+    radial-gradient(#ebdcb9 1px, transparent 1px),
+    repeating-linear-gradient(45deg, rgba(230,215,180,0.1) 0px, rgba(230,215,180,0.1) 2px, transparent 2px, transparent 10px);
+  background-size: 16px 16px, 12px 12px;
+}
+
+.notebook-sheet {
+  background-color: #fdfbf7; /* Rich cozy vanilla paper */
+  background-image: 
+    linear-gradient(rgba(234, 222, 195, 0.45) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(234, 222, 195, 0.45) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+/* Washi Tape - Lovely realistic scrapbook tapes */
+.washi-tape {
+  position: absolute;
+  padding: 4px 16px;
+  font-family: "Indie Flower", cursive;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.06);
+  opacity: 0.92;
+  transform: rotate(-3deg);
+  user-select: none;
+}
+.washi-tape::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: -6px;
+  width: 8px;
+  background-image: linear-gradient(45deg, transparent 50%, #ffffff 50%), linear-gradient(-45deg, transparent 50%, #ffffff 50%);
+  background-size: 6px 6px;
+}
+.washi-tape::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: -6px;
+  width: 8px;
+  background-image: linear-gradient(45deg, #ffffff 50%, transparent 50%), linear-gradient(-45deg, #ffffff 50%, transparent 50%);
+  background-size: 6px 6px;
+}
+
+/* Highlighter pens styling */
+.highlighter-pink {
+  background: linear-gradient(104deg, rgba(255, 185, 203, 0.72) 0%, rgba(254, 180, 200, 0.85) 100%);
+  border-radius: 4px 12px 6px 10px;
+  padding: 1px 6px;
+}
+.highlighter-yellow {
+  background: linear-gradient(104deg, rgba(255, 239, 153, 0.75) 0%, rgba(255, 235, 120, 0.88) 100%);
+  border-radius: 8px 4px 10px 5px;
+  padding: 1px 6px;
+}
+.highlighter-blue {
+  background: linear-gradient(104deg, rgba(179, 229, 252, 0.72) 0%, rgba(150, 220, 250, 0.85) 100%);
+  border-radius: 5px 10px 4px 8px;
+  padding: 1px 6px;
+}
+
+/* Irregular handrawn borders and sketches */
+.border-handdrawn {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.border-handdrawn-light {
+  border-radius: 20px 40px 10px 30px/30px 10px 45px 15px;
+}
+
+/* Simple keyframe for beating heart */
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+
+.animate-heart-beat {
+  animation: heartBeat 1.4s infinite ease-in-out;
+}
+
+/* Float Animation for Custom Particle Hearts */
+@keyframes floatUpSecret {
+  0% {
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-130px) scale(1.3) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.animate-heart-float {
+  animation: floatUpSecret 1.8s forwards cubic-bezier(0.1, 0.8, 0.3, 1);
+}
